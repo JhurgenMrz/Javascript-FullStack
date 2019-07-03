@@ -1,6 +1,11 @@
 const { Router } = require("express");
 const router = Router();
 
-router.get("/", (req, res) => res.json({ text: "Hello World :D" }));
+const Book = require("../models/book");
+
+router.get("/", async (req, res) => {
+  const books = await Book.find();
+  res.json(books);
+});
 
 module.exports = router;
