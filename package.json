@@ -1,0 +1,33 @@
+{
+  "name": "Javascript-FullStack",
+  "version": "1.0.0",
+  "description": "Éste es un repo de un proyecto de javascript fullstack de un video de youtube :) Credit: Fazt Code",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhurgenMrz/Javascript-FullStack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhurgenMrz/Javascript-FullStack/issues"
+  },
+  "homepage": "https://github.com/JhurgenMrz/Javascript-FullStack#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "mongoose": "^5.6.2",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
