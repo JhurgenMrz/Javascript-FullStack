@@ -16,9 +16,7 @@ class UI {
             <div class="card m-2">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="http://localhost:3000${
-                          book.imagePath
-                        }" alt="" class="img-fluid"/>
+                        <img src="${book.imagePath}" alt="" class="img-fluid"/>
                     </div>
                     <div class="col-md-8">
                         <div class="card-block px-2">
@@ -51,19 +49,17 @@ class UI {
   }
 
   renderMessage(message, colorMessage, secondsToRemove) {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.className = `alert alert-${colorMessage} message`;
     div.appendChild(document.createTextNode(message));
 
-    const container = document.querySelector('.col-md-4');
-    const bookForm = document.querySelector('#book-form');
+    const container = document.querySelector(".col-md-4");
+    const bookForm = document.querySelector("#book-form");
 
-    container.insertBefore(div, bookForm)
-    setTimeout(()=>{
-      document.querySelector('.message').remove();
-    }, secondsToRemove)
-
-    
+    container.insertBefore(div, bookForm);
+    setTimeout(() => {
+      document.querySelector(".message").remove();
+    }, secondsToRemove);
   }
 
   async deleteBook(bookId) {
