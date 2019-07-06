@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", e => {
 });
 
 const BookForm = document.getElementById("book-form");
+
 BookForm.addEventListener("submit", e => {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
@@ -21,6 +22,18 @@ BookForm.addEventListener("submit", e => {
 
   const ui = new UI();
   ui.addANewBook(formData);
+
+  ui.renderMessage("New Book Added", "success", 2000);
+
+  e.preventDefault();
+});
+
+document.getElementById("books-cards").addEventListener("click", e => {
+  if (e.target.classList.contains("delete")) {
+    const ui = new UI();
+    ui.deleteBook(e.target.getAttribute("_id"));
+    ui.renderMessage("Book Deleted Successfully", "danger", 2000);
+  }
 
   e.preventDefault();
 });
