@@ -11,8 +11,8 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { title, author, isbn } = req.body;
-  const imagePath = "/uploads/" + req.file.filename;
+  const { title, author, isbn, imagePath } = req.body;
+  // const imagePath = "/uploads/" + req.file.filename;
   const newBook = new Book({ title, author, isbn, imagePath });
   await newBook.save();
   res.json({ message: "Book Saved" });
@@ -20,8 +20,13 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   const book = await Book.findByIdAndDelete(req.params.id);
-  fs.unlink(path.resolve("./backend/public" + book.imagePath));
+  // fs.unlink(path.resolve("./backend/public" + book.imagePath));
   res.json({ message: "Book deleted" });
 });
+
+// router.put("/:id", async (req, res)=>{
+//   const book = await Book.findByIdAndUpdate(req.paran.id);
+
+// });
 
 module.exports = router;
